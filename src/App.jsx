@@ -62,8 +62,13 @@ export default function App() {
     setMenuOpen(false);
   }, []);
 
-  const handleProjectToggle = useCallback((index) => {
+  const handleProjectSelect = useCallback((index) => {
     setOpenProject(index);
+    setActiveProjectSection(0);
+  }, []);
+
+  const handleProjectToggle = useCallback((index) => {
+    setOpenProject((currentProject) => (currentProject === index ? -1 : index));
     setActiveProjectSection(0);
   }, []);
 
@@ -99,6 +104,7 @@ export default function App() {
           activeProjectSection={activeProjectSection}
           openProject={openProject}
           onProjectSectionChange={setActiveProjectSection}
+          onProjectSelect={handleProjectSelect}
           onProjectToggle={handleProjectToggle}
         />
         <CaseStudiesSection
