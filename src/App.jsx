@@ -10,6 +10,7 @@ import { ConnectSection } from "./sections/ConnectSection";
 import { ExperienceSection } from "./sections/ExperienceSection";
 import { IntroSection } from "./sections/IntroSection";
 import { ProjectsSection } from "./sections/ProjectsSection";
+import { SkillLevelsSection } from "./sections/SkillLevelsSection";
 import { getSectionId } from "./utils/sectionUtils";
 
 export default function App() {
@@ -95,6 +96,7 @@ export default function App() {
           openSkill={openSkill}
           onSkillToggle={handleSkillToggle}
         />
+        <SkillLevelsSection />
         <ProjectsSection
           activeProjectSection={activeProjectSection}
           openProject={openProject}

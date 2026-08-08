@@ -694,6 +694,16 @@ section {
   }
 }
 
+@keyframes skillMeterFill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--level);
+  }
+}
+
 @keyframes buildProgress {
   0% {
     transform: translateX(-110%);
@@ -822,6 +832,7 @@ section {
   .availability span,
   .build-loader,
   .build-loader span::before,
+  .skill-meter-track span,
   .skeleton-screen,
   .skeleton-orbit .outer,
   .skeleton-pill::after,
@@ -1040,6 +1051,108 @@ h1 {
   border-radius: 11px;
   background: linear-gradient(135deg, #ff664d, #ff4f78);
   color: white;
+}
+
+.skill-level-section {
+  padding: 92px 7vw 104px;
+  background:
+    radial-gradient(circle at 15% 22%, rgba(47, 184, 255, 0.1), transparent 24%),
+    linear-gradient(135deg, #16152a, #211f3b 58%, #17162b);
+  color: white;
+}
+
+.skill-level-heading {
+  max-width: 900px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.skill-level-heading span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 102, 77, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 102, 77, 0.1);
+  color: #ff8a74;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.skill-level-heading h2 {
+  max-width: 820px;
+  margin: 0 auto 16px;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.08;
+}
+
+.skill-level-heading p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.skill-meter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.skill-meter-card {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.skill-meter-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.skill-meter-top strong {
+  font-size: 17px;
+}
+
+.skill-meter-top span {
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.skill-meter-track {
+  height: 13px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-meter-track span {
+  display: block;
+  width: var(--level);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 42%, white));
+  box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 32%, transparent);
+  animation: skillMeterFill 900ms ease-out both;
+}
+
+.skill-meter-card small {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .dark-section {
@@ -1933,6 +2046,7 @@ footer {
   }
 
   .hero-section,
+  .skill-level-section,
   .projects-section,
   .experience-section,
   .case-section {
@@ -1967,6 +2081,10 @@ footer {
     min-height: auto;
     padding-top: 86px;
     padding-bottom: 96px;
+  }
+
+  .skill-meter-grid {
+    grid-template-columns: 1fr;
   }
 
   .case-section {
@@ -2124,6 +2242,7 @@ footer {
   }
 
   .projects-section h2,
+  .skill-level-heading h2,
   .experience-section h2,
   .case-section h2 {
     margin-bottom: 42px;
@@ -2249,6 +2368,7 @@ footer {
   }
 
   .projects-section h2,
+  .skill-level-heading h2,
   .experience-section h2,
   .case-section h2,
   .connect-copy h2 {

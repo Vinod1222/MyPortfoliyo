@@ -131,6 +131,19 @@ export const SKILLS = [
   },
 ];
 
+export const SKILL_LEVELS = [
+  { name: "React.js", level: 88, color: "#ff654d" },
+  { name: "JavaScript ES6+", level: 86, color: "#f7b500" },
+  { name: "HTML5", level: 92, color: "#25c99c" },
+  { name: "CSS3 / SCSS", level: 84, color: "#2fb8ff" },
+  { name: "TypeScript", level: 74, color: "#7f5cff" },
+  { name: "Redux", level: 78, color: "#ff5bb2" },
+  { name: "REST API", level: 82, color: "#14bf8c" },
+  { name: "Tailwind CSS", level: 72, color: "#38bdf8" },
+  { name: "Jest", level: 64, color: "#f97316" },
+  { name: "Git / GitHub", level: 80, color: "#a3e635" },
+];
+
 export const PROJECTS = [
   {
     name: "Loan Origination Platform",
