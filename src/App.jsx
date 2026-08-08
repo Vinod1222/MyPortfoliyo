@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Header } from "./components/Header";
+import { SkeletonScreen } from "./components/SkeletonScreen";
 import { NAV_ITEMS } from "./constants/portfolioData";
 import { useActiveNavigation } from "./hooks/useActiveNavigation";
 import { useDismissableLayer } from "./hooks/useDismissableLayer";
@@ -12,6 +13,7 @@ import { ProjectsSection } from "./sections/ProjectsSection";
 import { getSectionId } from "./utils/sectionUtils";
 
 export default function App() {
+  const [isSkeletonVisible, setIsSkeletonVisible] = useState(true);
   const [openSkill, setOpenSkill] = useState(0);
   const [openProject, setOpenProject] = useState(0);
   const [activeProjectSection, setActiveProjectSection] = useState(0);
@@ -28,6 +30,14 @@ export default function App() {
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  useEffect(() => {
+    const skeletonTimer = window.setTimeout(() => {
+      setIsSkeletonVisible(false);
+    }, 1150);
+
+    return () => window.clearTimeout(skeletonTimer);
   }, []);
 
   const closeIntent = useCallback(() => setIntentOpen(false), []);
@@ -68,6 +78,8 @@ export default function App() {
 
   return (
     <>
+      {isSkeletonVisible && <SkeletonScreen />}
+
       <Header
         activeNav={activeNav}
         menuOpen={menuOpen}
