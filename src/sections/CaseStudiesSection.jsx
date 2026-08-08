@@ -11,6 +11,10 @@ export function CaseStudiesSection({ onCaseToggle, openCase }) {
             className={`case-card ${study.color}`}
             onMouseEnter={() => onCaseToggle(index)}
             onFocus={() => onCaseToggle(index)}
+            onClick={(event) => {
+              if (event.target.closest("button, a")) return;
+              onCaseToggle(index);
+            }}
             key={study.title}
           >
             <span className="case-icon">
