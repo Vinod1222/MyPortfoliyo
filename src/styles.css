@@ -183,15 +183,15 @@ section {
 }
 
 .domain-roller {
-  position: relative;
-  width: 198px;
-  height: 44px;
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 
 .domain-roller strong {
-  position: absolute;
-  inset: 0;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -204,19 +204,17 @@ section {
   color: #ff8a74;
   font-size: 15px;
   font-weight: 900;
-  transform-origin: center;
-  animation: domainRoll 4.8s ease-in-out infinite;
   box-shadow: none;
   white-space: nowrap;
   backdrop-filter: blur(8px);
 }
 
 .domain-roller strong:nth-child(2) {
-  animation-delay: 2.4s;
+  position: static;
 }
 
 .domain-roller strong svg {
-  animation: domainIconFloat 1.8s ease-in-out infinite;
+  flex: 0 0 auto;
 }
 
 .orbit-wrap {
@@ -244,7 +242,6 @@ section {
   box-shadow:
     0 0 18px rgba(255, 102, 77, 0.18),
     inset 0 0 18px rgba(255, 102, 77, 0.08);
-  animation: orbitSpin 18s linear infinite;
 }
 
 .orbit.inner {
@@ -269,7 +266,6 @@ section {
     0 0 18px rgba(255, 102, 77, 0.95),
     0 0 42px rgba(255, 102, 77, 0.72);
   transform: translate(-50%, -50%);
-  animation: dataFlow 7.2s linear infinite;
 }
 
 .flow-dot::after {
@@ -284,12 +280,14 @@ section {
 }
 
 .flow-two {
-  animation-delay: -2.4s;
+  top: 66%;
+  left: 37%;
   opacity: 0.9;
 }
 
 .flow-three {
-  animation-delay: -4.8s;
+  top: 52%;
+  left: 72%;
   opacity: 0.75;
 }
 

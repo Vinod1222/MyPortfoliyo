@@ -17,6 +17,8 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
             type="button"
             className={activeSection === itemIndex ? "selected" : ""}
             key={item}
+            onMouseEnter={() => onSectionChange(itemIndex)}
+            onFocus={() => onSectionChange(itemIndex)}
             onClick={() => onSectionChange(itemIndex)}
           >
             <small>{itemIndex + 1}.</small>
@@ -109,6 +111,7 @@ export function ProjectsSection({
           return (
             <article
               className={isOpen ? "project-card open" : "project-card"}
+              onMouseEnter={() => onProjectToggle(index)}
               key={project.name}
             >
               <div className="project-status">
@@ -132,6 +135,7 @@ export function ProjectsSection({
               <button
                 type="button"
                 aria-label={`Toggle ${project.name}`}
+                aria-expanded={isOpen}
                 onClick={() => onProjectToggle(index)}
               >
                 <ChevronDown size={18} />

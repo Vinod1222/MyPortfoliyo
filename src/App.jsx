@@ -12,8 +12,8 @@ import { ProjectsSection } from "./sections/ProjectsSection";
 import { getSectionId } from "./utils/sectionUtils";
 
 export default function App() {
-  const [openSkill, setOpenSkill] = useState(-1);
-  const [openProject, setOpenProject] = useState(-1);
+  const [openSkill, setOpenSkill] = useState(0);
+  const [openProject, setOpenProject] = useState(0);
   const [activeProjectSection, setActiveProjectSection] = useState(0);
   const [openCase, setOpenCase] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,23 +52,14 @@ export default function App() {
     setMenuOpen(false);
   }, []);
 
-  const handleProjectToggle = useCallback(
-    (index) => {
-      setOpenProject(openProject === index ? -1 : index);
-      setActiveProjectSection(0);
-    },
-    [openProject],
-  );
+  const handleProjectToggle = useCallback((index) => {
+    setOpenProject(index);
+    setActiveProjectSection(0);
+  }, []);
 
-  const handleSkillToggle = useCallback(
-    (index) => setOpenSkill(openSkill === index ? -1 : index),
-    [openSkill],
-  );
+  const handleSkillToggle = useCallback((index) => setOpenSkill(index), []);
 
-  const handleCaseToggle = useCallback(
-    (index) => setOpenCase(openCase === index ? -1 : index),
-    [openCase],
-  );
+  const handleCaseToggle = useCallback((index) => setOpenCase(index), []);
 
   const handleIntentChange = useCallback((option) => {
     setSelectedIntent(option);

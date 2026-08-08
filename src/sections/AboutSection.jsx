@@ -15,9 +15,15 @@ export function AboutSection({ openSkill, onSkillToggle }) {
               <article
                 className={isOpen ? "skill-card expanded" : "skill-card"}
                 style={{ "--accent": skill.color }}
+                onMouseEnter={() => onSkillToggle(index)}
+                onFocus={() => onSkillToggle(index)}
                 key={skill.title}
               >
-                <button type="button" onClick={() => onSkillToggle(index)}>
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => onSkillToggle(index)}
+                >
                   <span className="rail-dot" />
                   <span className="skill-icon">
                     <Icon size={22} />

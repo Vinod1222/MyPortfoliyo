@@ -7,7 +7,12 @@ export function CaseStudiesSection({ onCaseToggle, openCase }) {
       <h2>Case Studies</h2>
       <div className="case-list">
         {CASE_STUDIES.map((study, index) => (
-          <article className={`case-card ${study.color}`} key={study.title}>
+          <article
+            className={`case-card ${study.color}`}
+            onMouseEnter={() => onCaseToggle(index)}
+            onFocus={() => onCaseToggle(index)}
+            key={study.title}
+          >
             <span className="case-icon">
               <BriefcaseBusiness size={24} />
             </span>
@@ -36,6 +41,7 @@ export function CaseStudiesSection({ onCaseToggle, openCase }) {
             <button
               type="button"
               aria-label={`Toggle ${study.title}`}
+              aria-expanded={openCase === index}
               onClick={() => onCaseToggle(index)}
             >
               <ChevronDown size={18} />

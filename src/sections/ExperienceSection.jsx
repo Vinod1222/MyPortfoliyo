@@ -20,6 +20,7 @@ export function ExperienceSection() {
               style={{ "--accent": job.color }}
               type="button"
               aria-pressed={isActive}
+              onMouseEnter={() => setActiveExperienceIndex(index)}
               onClick={() => setActiveExperienceIndex(index)}
               key={job.company}
             >
