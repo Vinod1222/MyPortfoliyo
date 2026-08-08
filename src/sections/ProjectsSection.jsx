@@ -97,7 +97,6 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
 export function ProjectsSection({
   activeProjectSection,
   onProjectSectionChange,
-  onProjectSelect,
   onProjectToggle,
   openProject,
 }) {
@@ -112,7 +111,6 @@ export function ProjectsSection({
           return (
             <article
               className={isOpen ? "project-card open" : "project-card"}
-              onPointerEnter={() => onProjectSelect(index)}
               onClick={(event) => {
                 if (event.target.closest("button, a")) return;
                 onProjectToggle(index);

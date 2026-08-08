@@ -15,7 +15,7 @@ import { getSectionId } from "./utils/sectionUtils";
 export default function App() {
   const [isSkeletonVisible, setIsSkeletonVisible] = useState(true);
   const [openSkill, setOpenSkill] = useState(0);
-  const [openProject, setOpenProject] = useState(0);
+  const [openProject, setOpenProject] = useState(-1);
   const [activeProjectSection, setActiveProjectSection] = useState(0);
   const [openCase, setOpenCase] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -62,11 +62,6 @@ export default function App() {
     setMenuOpen(false);
   }, []);
 
-  const handleProjectSelect = useCallback((index) => {
-    setOpenProject(index);
-    setActiveProjectSection(0);
-  }, []);
-
   const handleProjectToggle = useCallback((index) => {
     setOpenProject((currentProject) => (currentProject === index ? -1 : index));
     setActiveProjectSection(0);
@@ -104,7 +99,6 @@ export default function App() {
           activeProjectSection={activeProjectSection}
           openProject={openProject}
           onProjectSectionChange={setActiveProjectSection}
-          onProjectSelect={handleProjectSelect}
           onProjectToggle={handleProjectToggle}
         />
         <CaseStudiesSection
