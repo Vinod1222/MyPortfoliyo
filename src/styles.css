@@ -458,7 +458,7 @@ section {
   box-shadow:
     0 0 18px rgba(255, 102, 77, 0.18),
     inset 0 0 18px rgba(255, 102, 77, 0.08);
-  animation: orbitSpin 22s linear 3;
+  animation: orbitSpin 22s linear infinite;
 }
 
 .orbit.inner {
@@ -483,7 +483,7 @@ section {
     0 0 18px rgba(255, 102, 77, 0.95),
     0 0 42px rgba(255, 102, 77, 0.72);
   transform: translate(-50%, -50%);
-  animation: dataFlow 6.8s linear 3;
+  animation: dataFlow 6.8s linear infinite;
 }
 
 .flow-dot::after {
