@@ -885,6 +885,7 @@ section {
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease;
+  cursor: pointer;
 }
 
 .skill-card.expanded {

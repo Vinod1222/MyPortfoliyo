@@ -111,7 +111,7 @@ export function ProjectsSection({
           return (
             <article
               className={isOpen ? "project-card open" : "project-card"}
-              onMouseEnter={() => onProjectToggle(index)}
+              onPointerEnter={() => onProjectToggle(index)}
               onClick={(event) => {
                 if (event.target.closest("button, a")) return;
                 onProjectToggle(index);

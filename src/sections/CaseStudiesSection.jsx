@@ -9,7 +9,7 @@ export function CaseStudiesSection({ onCaseToggle, openCase }) {
         {CASE_STUDIES.map((study, index) => (
           <article
             className={`case-card ${study.color}`}
-            onMouseEnter={() => onCaseToggle(index)}
+            onPointerEnter={() => onCaseToggle(index)}
             onFocus={() => onCaseToggle(index)}
             onClick={(event) => {
               if (event.target.closest("button, a")) return;
