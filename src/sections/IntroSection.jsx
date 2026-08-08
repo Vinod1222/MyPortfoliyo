@@ -4,6 +4,10 @@ import { DOMAIN_EXPERIENCE, ORBIT_ITEMS } from "../constants/portfolioData";
 export function IntroSection() {
   return (
     <section className="intro-section" id="home">
+      <div className="build-loader" aria-hidden="true">
+        <span />
+        <strong>Building interface</strong>
+      </div>
       <div className="intro-copy">
         <div className="availability dark">
           <span />

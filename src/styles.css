@@ -121,6 +121,7 @@ section {
 }
 
 .intro-section {
+  position: relative;
   min-height: calc(100vh - 88px);
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
@@ -131,6 +132,47 @@ section {
     radial-gradient(circle at 73% 50%, rgba(255, 102, 77, 0.11), transparent 25%),
     linear-gradient(90deg, #19182d 0%, #1a192f 52%, #18172c 100%);
   color: white;
+  overflow: hidden;
+}
+
+.build-loader {
+  position: absolute;
+  top: 22px;
+  left: 5.5vw;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 102, 77, 0.22);
+  border-radius: 999px;
+  background: rgba(25, 24, 45, 0.78);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  animation: buildBadgeExit 3.1s ease forwards;
+}
+
+.build-loader span {
+  width: 54px;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.build-loader span::before {
+  content: '';
+  display: block;
+  width: 58%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff664d, #ffb199);
+  animation: buildProgress 2.4s ease-out forwards;
 }
 
 .intro-copy {
@@ -183,15 +225,15 @@ section {
 }
 
 .domain-roller {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: auto;
-  height: auto;
-  overflow: visible;
+  position: relative;
+  width: 198px;
+  height: 44px;
+  overflow: hidden;
 }
 
 .domain-roller strong {
+  position: absolute;
+  inset: 0;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -204,17 +246,19 @@ section {
   color: #ff8a74;
   font-size: 15px;
   font-weight: 900;
+  transform-origin: center;
+  animation: domainRoll 5.2s ease-in-out infinite;
   box-shadow: none;
   white-space: nowrap;
   backdrop-filter: blur(8px);
 }
 
 .domain-roller strong:nth-child(2) {
-  position: static;
+  animation-delay: 2.6s;
 }
 
 .domain-roller strong svg {
-  flex: 0 0 auto;
+  animation: domainIconFloat 1.9s ease-in-out infinite;
 }
 
 .orbit-wrap {
@@ -242,6 +286,7 @@ section {
   box-shadow:
     0 0 18px rgba(255, 102, 77, 0.18),
     inset 0 0 18px rgba(255, 102, 77, 0.08);
+  animation: orbitSpin 22s linear 3;
 }
 
 .orbit.inner {
@@ -266,6 +311,7 @@ section {
     0 0 18px rgba(255, 102, 77, 0.95),
     0 0 42px rgba(255, 102, 77, 0.72);
   transform: translate(-50%, -50%);
+  animation: dataFlow 6.8s linear 3;
 }
 
 .flow-dot::after {
@@ -280,14 +326,12 @@ section {
 }
 
 .flow-two {
-  top: 66%;
-  left: 37%;
+  animation-delay: -2.2s;
   opacity: 0.9;
 }
 
 .flow-three {
-  top: 52%;
-  left: 72%;
+  animation-delay: -4.4s;
   opacity: 0.75;
 }
 
@@ -460,6 +504,31 @@ section {
   }
 }
 
+@keyframes buildProgress {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  72%,
+  100% {
+    transform: translateX(86%);
+  }
+}
+
+@keyframes buildBadgeExit {
+  0%,
+  72% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+  }
+}
+
 @keyframes dataFlow {
   0%,
   100% {
@@ -560,8 +629,14 @@ section {
   .flow-dot,
   .domain-roller strong,
   .domain-roller strong svg,
-  .availability span {
+  .availability span,
+  .build-loader,
+  .build-loader span::before {
     animation: none;
+  }
+
+  .build-loader {
+    display: none;
   }
 }
 
