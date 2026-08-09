@@ -60,13 +60,21 @@ section {
 }
 
 .flow-dot {
-  animation: dataFlow 6.8s linear infinite;
+  position: absolute;
+  inset: 4%;
+  border-radius: 999px;
+  animation: orbitSpin 6.8s linear infinite;
+  pointer-events: none;
 }
 
 .flow-dot::after {
   content: "";
   position: absolute;
-  inset: 7px;
+  top: 50%;
+  right: -8px;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
   border-radius: 999px;
   background: #fff5f1;
   box-shadow: 0 0 28px rgba(255, 102, 77, 0.9);
@@ -282,16 +290,6 @@ section {
     opacity: 0;
     transform: translateY(-16px);
     pointer-events: none;
-  }
-}
-
-@keyframes dataFlow {
-  from {
-    offset-distance: 0%;
-  }
-
-  to {
-    offset-distance: 100%;
   }
 }
 

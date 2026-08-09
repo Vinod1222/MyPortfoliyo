@@ -68,27 +68,9 @@ export function IntroSection() {
       >
         <div className="orbit-spin absolute inset-[4%] rounded-full border-2 border-dashed border-[#ff664d]/60" />
         <div className="absolute inset-[18%] rounded-full border-2 border-[#ff664d]/20" />
-        <span
-          className="flow-dot flow-one absolute h-9 w-9 rounded-full"
-          style={{
-            offsetPath:
-              "path('M 280 26 A 254 254 0 1 1 279.9 26')",
-          }}
-        />
-        <span
-          className="flow-dot flow-two absolute h-9 w-9 rounded-full"
-          style={{
-            offsetPath:
-              "path('M 280 26 A 254 254 0 1 1 279.9 26')",
-          }}
-        />
-        <span
-          className="flow-dot flow-three absolute h-9 w-9 rounded-full"
-          style={{
-            offsetPath:
-              "path('M 280 26 A 254 254 0 1 1 279.9 26')",
-          }}
-        />
+        <span className="flow-dot flow-one" />
+        <span className="flow-dot flow-two" />
+        <span className="flow-dot flow-three" />
         <div className="absolute left-1/2 top-1/2 flex aspect-square w-[38%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ff664d]/12 shadow-[0_0_120px_rgba(255,102,77,0.22)] max-[420px]:w-[46%]">
           <div className="cube relative flex aspect-square w-full items-center justify-center text-[#ff7a64]">
             <span className="cube-face face-top" />
