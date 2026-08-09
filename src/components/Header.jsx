@@ -14,14 +14,14 @@ export function Header({
     : "hidden lg:flex lg:items-center lg:gap-7";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] flex min-h-[88px] items-center justify-between border-b border-white/10 bg-[#19182d] px-[5.5vw]">
+    <header className="fixed inset-x-0 top-0 z-[100] flex min-h-[82px] items-center justify-between border-b border-white/10 bg-[#19182d] px-[5.5vw]">
       <a
-        className="flex items-center gap-2.5 whitespace-nowrap text-[21px] font-extrabold text-white"
+        className="flex items-center gap-2.5 whitespace-nowrap text-[21px] font-extrabold text-[#ffffff]"
         href="#home"
         onClick={onBrandClick}
       >
         <Sparkles className="text-[#ff664d]" size={18} fill="currentColor" />
-        <span className="max-[420px]:max-w-[210px] max-[420px]:overflow-hidden max-[420px]:text-ellipsis">
+        <span className="text-white opacity-100 drop-shadow-sm max-[420px]:max-w-[210px] max-[420px]:overflow-hidden max-[420px]:text-ellipsis">
           connect-vinod
         </span>
       </a>

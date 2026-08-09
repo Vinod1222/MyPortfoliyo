@@ -73,8 +73,8 @@ export function AboutSection({ openSkill, onSkillToggle }) {
           })}
         </div>
 
-        <article className="rounded-[24px] border border-black/10 bg-white p-8 shadow-[0_24px_70px_rgba(17,24,39,0.08)] max-md:p-6">
-          <h1 className="mb-5 text-[clamp(34px,4vw,52px)] font-black leading-none tracking-normal text-[#19192d]">
+        <article className="rounded-[22px] border border-black/10 bg-white p-7 shadow-[0_24px_70px_rgba(17,24,39,0.08)] max-md:p-5">
+          <h1 className="mb-5 text-[clamp(30px,3.2vw,44px)] font-black leading-none tracking-normal text-[#19192d]">
             About Me
           </h1>
           <p className="mb-4 text-base leading-[1.75] text-[#4b5563]">

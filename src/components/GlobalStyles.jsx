@@ -31,26 +31,22 @@ a {
 }
 
 section {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 82px;
 }
 
 .build-loader {
-  animation: buildBadgeExit 3.1s ease forwards;
+  animation: buildBadgeExit 1.45s ease forwards;
 }
 
 .build-loader span {
-  animation: buildProgress 2.4s ease-out forwards;
+  animation: buildProgress 1.05s ease-out forwards;
 }
 
-.domain-roller strong {
-  animation: domainRoll 5.2s ease-in-out infinite;
+.domain-track {
+  animation: domainSlide 5.4s ease-in-out infinite;
 }
 
-.domain-roller strong:nth-child(2) {
-  animation-delay: 2.6s;
-}
-
-.domain-roller strong svg {
+.domain-track svg {
   animation: domainIconFloat 1.9s ease-in-out infinite;
 }
 
@@ -294,22 +290,16 @@ section {
   }
 }
 
-@keyframes domainRoll {
+@keyframes domainSlide {
   0%,
-  42% {
-    opacity: 1;
+  42%,
+  100% {
     transform: translateY(0);
   }
 
   50%,
   92% {
-    opacity: 0;
     transform: translateY(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -325,6 +315,14 @@ section {
 }
 
 @media (max-width: 640px) {
+  body {
+    max-width: 100vw;
+  }
+
+  .flow-dot {
+    display: none;
+  }
+
   .orbit-item::before {
     display: none;
   }
