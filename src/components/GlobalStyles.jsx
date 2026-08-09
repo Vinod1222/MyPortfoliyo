@@ -42,11 +42,16 @@ section {
   animation: buildProgress 1.05s ease-out forwards;
 }
 
-.domain-track {
-  animation: domainSlide 5.4s ease-in-out infinite;
+.domain-item {
+  opacity: 0;
+  animation: domainSwap 5.4s linear infinite;
 }
 
-.domain-track svg {
+.domain-item:nth-child(2) {
+  animation-delay: 2.7s;
+}
+
+.domain-item svg {
   animation: domainIconFloat 1.9s ease-in-out infinite;
 }
 
@@ -290,16 +295,16 @@ section {
   }
 }
 
-@keyframes domainSlide {
+@keyframes domainSwap {
   0%,
-  42%,
+  45%,
   100% {
-    transform: translateY(0);
+    opacity: 1;
   }
 
   50%,
-  92% {
-    transform: translateY(-100%);
+  95% {
+    opacity: 0;
   }
 }
 

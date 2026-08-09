@@ -49,17 +49,15 @@ export function IntroSection() {
             className="domain-roller relative h-14 w-[248px] max-w-full overflow-hidden rounded-xl border border-[#ff664d]/25 bg-[#ff664d]/10"
             aria-label="Experienced in Banking Domain and Fintech Domain"
           >
-            <div className="domain-track absolute inset-x-0 top-0 h-[200%]">
-              {DOMAIN_EXPERIENCE.map(({ icon: Icon, label }) => (
-                <strong
-                  className="flex h-1/2 items-center justify-center gap-2.5 text-sm font-black text-[#ff7a64]"
-                  key={label}
-                >
-                  <Icon size={18} />
-                  {label}
-                </strong>
-              ))}
-            </div>
+            {DOMAIN_EXPERIENCE.map(({ icon: Icon, label }) => (
+              <strong
+                className="domain-item absolute inset-0 flex items-center justify-center gap-2.5 text-sm font-black text-[#ff7a64]"
+                key={label}
+              >
+                <Icon size={18} />
+                {label}
+              </strong>
+            ))}
           </div>
         </div>
       </div>

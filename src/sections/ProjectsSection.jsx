@@ -6,12 +6,12 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
   const selectedSection = getProjectSections(project)[activeSection];
 
   return (
-    <div className="col-span-full mt-5 grid grid-cols-[260px_1fr] overflow-hidden border-t border-white/10 max-lg:grid-cols-1">
+    <div className="col-span-full -mx-6 -mb-[26px] mt-1.5 grid min-h-[500px] grid-cols-[280px_minmax(0,1fr)] overflow-hidden border-t border-white/15 bg-[#121126]/40 max-lg:grid-cols-1 max-[620px]:-mx-[18px]">
       <aside
-        className="border-r border-white/10 p-5 max-lg:border-b max-lg:border-r-0 max-md:p-4"
+        className="border-r border-white/10 bg-white/[0.02] px-6 py-7 max-lg:border-b max-lg:border-r-0 max-md:p-4"
         aria-label={`${project.name} detail contents`}
       >
-        <strong className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-white/45">
+        <strong className="mb-4 block text-xs font-black uppercase tracking-[0.16em] text-white/35">
           Contents
         </strong>
         {project.contents.map((item, itemIndex) => (
@@ -33,12 +33,12 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
         ))}
       </aside>
 
-      <div className="max-h-[340px] overflow-auto p-6 max-md:p-4">
+      <div className="max-h-[500px] overflow-auto p-8 max-md:p-4">
         <section>
-          <h4 className="mb-3 text-xl font-black tracking-normal text-white">
+          <h4 className="mb-3 text-[24px] font-black tracking-normal text-white">
             {selectedSection.title}
           </h4>
-          <p className="text-[15px] leading-7 text-[#c8d2f5]">
+          <p className="text-base leading-[1.65] text-[#c8d2f5]">
             {selectedSection.intro}
           </p>
         </section>
@@ -115,21 +115,24 @@ export function ProjectsSection({
   openProject,
 }) {
   return (
-    <section className="bg-[#19182d] px-[5.5vw] py-14 text-white max-md:px-4 max-md:py-10" id="projects">
-      <h2 className="mb-8 max-w-[920px] text-[clamp(28px,3.1vw,44px)] font-black leading-tight tracking-normal">
+    <section
+      className="min-h-[94vh] bg-[#19182d] px-[7vw] py-[118px] pb-[138px] text-white max-[980px]:min-h-0 max-[980px]:px-[22px] max-[980px]:py-[86px] max-[980px]:pb-24 max-[620px]:px-4 max-[620px]:py-12"
+      id="projects"
+    >
+      <h2 className="mx-auto mb-16 max-w-[1120px] text-center text-[clamp(38px,4.2vw,54px)] font-black leading-[1.08] tracking-normal max-[760px]:mb-[42px] max-[760px]:text-4xl max-[620px]:text-[32px] max-[420px]:text-[30px]">
         Solutions Built for Impact, Speed, and Reliability
       </h2>
-      <div className="grid max-w-[1320px] gap-5">
+      <div className="mx-auto grid max-w-[1380px] gap-7">
         {PROJECTS.map((project, index) => {
           const Icon = project.icon;
           const isOpen = openProject === index;
 
           return (
             <article
-              className={`relative grid cursor-pointer grid-cols-[70px_1fr_46px] overflow-hidden rounded-[18px] border bg-[#21203b] shadow-[0_18px_45px_rgba(0,0,0,0.18)] transition-all duration-300 max-md:grid-cols-1 max-md:p-0 ${
+              className={`relative grid cursor-pointer grid-cols-[82px_minmax(0,1fr)_48px] items-center gap-6 overflow-hidden rounded-[22px] border border-[#ff664d]/40 border-t-[3px] border-t-[#ff664d] bg-[#21203b] px-6 py-[26px] shadow-[0_22px_54px_rgba(0,0,0,0.12)] transition-all duration-300 max-[980px]:grid-cols-1 max-[620px]:rounded-2xl max-[620px]:px-[18px] max-[620px]:py-[22px] ${
                 isOpen
-                  ? "border-[#ff664d] shadow-[0_28px_70px_rgba(0,0,0,0.28)]"
-                  : "border-white/10 hover:-translate-y-1 hover:border-[#ff664d]/70"
+                  ? "items-start border-[#ff664d]"
+                  : "hover:border-[#ff664d]/70"
               }`}
               onClick={(event) => {
                 if (event.target.closest("button, a")) return;
@@ -137,31 +140,31 @@ export function ProjectsSection({
               }}
               key={project.name}
             >
-              <div className="grid content-start justify-items-center gap-2 p-5 max-md:flex max-md:items-center max-md:justify-start max-md:p-4">
-                <span className="grid h-12 w-12 place-items-center rounded-[14px] bg-[#ff664d]/15 text-[#ff664d]">
-                  <Icon size={22} />
+              <div className="grid justify-items-center gap-2.5 max-[980px]:flex max-[980px]:items-center max-[980px]:justify-start">
+                <span className="grid h-14 w-14 place-items-center rounded-[13px] bg-[#ff664d]/15 text-[#ff664d]">
+                  <Icon size={24} />
                 </span>
-                <small className="text-[11px] font-black uppercase tracking-[0.14em] text-[#24e58a]">
+                <small className="text-xs font-black uppercase tracking-[0.08em] text-[#20d071]">
                   {project.status}
                 </small>
               </div>
 
-              <div className="p-5 pl-0 max-md:p-4 max-md:pt-0">
-                <h3 className="mb-2 text-xl font-black tracking-normal text-white max-md:text-[18px]">
+              <div>
+                <h3 className="mb-2 text-[22px] font-black tracking-normal text-white max-[620px]:text-[19px]">
                   {project.name}
                 </h3>
-                <p className="mb-3 text-[15px] leading-7 text-[#c8d2f5]">
+                <p className="mb-3 text-base leading-[1.65] text-white/55">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2.5">
+                <div className="flex min-w-0 flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span className="rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-black text-[#c8d2f5]" key={tag}>
+                    <span className="rounded-full bg-white/[0.09] px-3 py-1.5 text-xs font-bold text-white/60" key={tag}>
                       {tag}
                     </span>
                   ))}
                 </div>
                 {isOpen && (
-                  <p className="mt-4 text-sm font-black text-white/75">
+                  <p className="mt-4 text-base font-black text-white/75">
                     {project.impact}
                   </p>
                 )}
@@ -171,7 +174,7 @@ export function ProjectsSection({
                 type="button"
                 aria-label={`Toggle ${project.name}`}
                 aria-expanded={isOpen}
-                className="m-5 grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.06] text-white transition-all duration-300 max-md:absolute max-md:right-0 max-md:top-0"
+                className="grid h-[42px] w-[42px] place-items-center justify-self-end rounded-[11px] border border-white/10 bg-white/[0.05] text-white/55 transition-all duration-300"
                 onClick={() => onProjectToggle(index)}
               >
                 <ChevronDown
