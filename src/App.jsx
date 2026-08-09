@@ -92,7 +92,7 @@ export default function App() {
         onNavClick={scrollToSection}
       />
 
-      <main className="pt-[82px]">
+      <main className="pt-[76px]">
         <IntroSection />
         <AboutSection
           openSkill={openSkill}

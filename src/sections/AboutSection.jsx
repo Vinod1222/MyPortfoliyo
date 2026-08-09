@@ -4,7 +4,7 @@ import { SKILLS } from "../constants/portfolioData";
 export function AboutSection({ openSkill, onSkillToggle }) {
   return (
     <section
-      className="min-h-[calc(100vh-82px)] bg-[linear-gradient(90deg,#f5f6f8_0%,#ffffff_56%,#fbf8f7_100%)] px-[7vw] py-[108px] pb-[84px] max-[980px]:px-[22px] max-[980px]:pt-[58px] max-[620px]:px-4 max-[620px]:py-[38px] max-[620px]:pb-[58px]"
+      className="min-h-[calc(100vh-76px)] bg-[linear-gradient(90deg,#f5f6f8_0%,#ffffff_56%,#fbf8f7_100%)] px-[7vw] py-24 pb-20 max-[980px]:px-[22px] max-[980px]:pt-[54px] max-[620px]:px-4 max-[620px]:py-[34px] max-[620px]:pb-[54px]"
       id="about"
     >
       <div className="mx-auto grid max-w-[1460px] grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)] items-start gap-14 max-[980px]:grid-cols-1">
@@ -36,15 +36,15 @@ export function AboutSection({ openSkill, onSkillToggle }) {
                 <button
                   type="button"
                   aria-expanded={isOpen}
-                  className="grid min-h-[72px] w-full min-w-0 grid-cols-[46px_1fr_28px] items-center gap-3 border-0 bg-transparent px-[18px] py-3.5 text-left text-inherit"
+                  className="grid min-h-[66px] w-full min-w-0 grid-cols-[42px_1fr_28px] items-center gap-3 border-0 bg-transparent px-4 py-3 text-left text-inherit"
                   onClick={() => onSkillToggle(index)}
                 >
                   <span className="absolute left-[-32px] top-7 h-3.5 w-3.5 rounded-full bg-[var(--accent)] shadow-[0_0_0_7px_rgba(255,255,255,0.7)] max-md:hidden" />
-                  <span className="grid h-[46px] w-[46px] place-items-center rounded-[9px] bg-white/10 text-[var(--accent)]">
+                  <span className="grid h-[42px] w-[42px] place-items-center rounded-[9px] bg-white/10 text-[var(--accent)]">
                     <Icon size={22} />
                   </span>
                   <span className="min-w-0">
-                    <strong className="block [overflow-wrap:anywhere] text-[17px] font-black">
+                    <strong className="block [overflow-wrap:anywhere] text-base font-black">
                       {skill.title}
                     </strong>
                     <small className="mt-1 block [overflow-wrap:anywhere] text-sm font-bold leading-[1.35] text-white/45">
@@ -79,8 +79,8 @@ export function AboutSection({ openSkill, onSkillToggle }) {
           })}
         </div>
 
-        <article className="rounded-[14px] border-t-4 border-t-[#ff654d] bg-white px-[30px] py-8 shadow-[0_24px_64px_rgba(30,29,52,0.12)] max-[620px]:p-6 max-[420px]:p-5">
-          <h1 className="mb-[22px] text-[clamp(36px,3.4vw,44px)] font-black leading-none tracking-normal text-[#19192d]">
+        <article className="rounded-[14px] border-t-4 border-t-[#ff654d] bg-white px-7 py-7 shadow-[0_24px_64px_rgba(30,29,52,0.12)] max-[620px]:p-6 max-[420px]:p-5">
+          <h1 className="mb-5 text-[clamp(32px,3vw,40px)] font-black leading-none tracking-normal text-[#19192d]">
             About Me
           </h1>
           <p className="mb-5 text-base leading-[1.65] text-[#6b7280]">

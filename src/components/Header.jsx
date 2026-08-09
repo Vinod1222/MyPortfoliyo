@@ -14,9 +14,9 @@ export function Header({
     : "hidden lg:flex lg:items-center lg:gap-7";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] flex min-h-[82px] items-center justify-between border-b border-white/10 bg-[#19182d] px-[5.5vw]">
+    <header className="fixed inset-x-0 top-0 z-[100] flex min-h-[76px] items-center justify-between border-b border-white/10 bg-[#19182d] px-[5.5vw]">
       <a
-        className="flex items-center gap-2.5 whitespace-nowrap text-[21px] font-extrabold text-[#ffffff]"
+        className="flex items-center gap-2.5 whitespace-nowrap text-xl font-extrabold text-[#ffffff]"
         href="#home"
         onClick={onBrandClick}
       >
@@ -43,7 +43,7 @@ export function Header({
         ))}
 
         <a
-          className="flex min-h-11 items-center justify-center gap-2.5 whitespace-nowrap rounded-xl bg-[#ff664d] px-6 font-extrabold text-white shadow-[0_12px_28px_rgba(255,102,77,0.22)]"
+          className="flex min-h-10 items-center justify-center gap-2.5 whitespace-nowrap rounded-xl bg-[#ff664d] px-5 font-extrabold text-white shadow-[0_12px_28px_rgba(255,102,77,0.22)]"
           href={RESUME_PATH}
           download
         >

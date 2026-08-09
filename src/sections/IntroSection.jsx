@@ -13,11 +13,11 @@ const orbitPositionClass = {
 export function IntroSection() {
   return (
     <section
-      className="relative grid min-h-[680px] grid-cols-[minmax(0,0.92fr)_minmax(320px,0.9fr)] items-center gap-[4vw] overflow-hidden bg-[#19182d] px-[5.5vw] py-10 text-white max-lg:grid-cols-1 max-lg:gap-8 max-md:min-h-0 max-md:px-4 max-md:py-8"
+      className="relative grid min-h-[640px] grid-cols-[minmax(0,0.92fr)_minmax(320px,0.9fr)] items-center gap-[4vw] overflow-hidden bg-[#19182d] px-[5.5vw] py-9 text-white max-lg:grid-cols-1 max-lg:gap-8 max-md:min-h-0 max-md:px-4 max-md:py-8"
       id="home"
     >
       <div
-        className="build-loader pointer-events-none fixed left-1/2 top-[96px] z-[120] w-[min(320px,calc(100vw-32px))] -translate-x-1/2 overflow-hidden rounded-full border border-[#ff664d]/30 bg-[#21203b] px-5 py-3 text-center shadow-[0_20px_50px_rgba(0,0,0,0.24)]"
+        className="build-loader pointer-events-none fixed left-1/2 top-[90px] z-[120] w-[min(300px,calc(100vw-32px))] -translate-x-1/2 overflow-hidden rounded-full border border-[#ff664d]/30 bg-[#21203b] px-5 py-2.5 text-center shadow-[0_20px_50px_rgba(0,0,0,0.24)]"
         aria-hidden="true"
       >
         <span className="absolute inset-y-0 left-0 -z-10 w-full origin-left bg-gradient-to-r from-[#ff664d]/70 to-[#7f5cff]/70" />
@@ -30,7 +30,7 @@ export function IntroSection() {
           <span className="h-3 w-3 rounded-full bg-[#24e58a] shadow-[0_0_0_7px_rgba(37,201,156,0.14)]" />
           Open to Work
         </div>
-        <h1 className="my-5 text-[clamp(40px,4.2vw,62px)] font-black leading-[1] tracking-normal max-md:my-4 max-md:text-[31px] max-[420px]:text-[29px]">
+        <h1 className="my-5 text-[clamp(38px,3.9vw,56px)] font-black leading-[1] tracking-normal max-md:my-4 max-md:text-[31px] max-[420px]:text-[29px]">
           Hello! I am
           <strong className="block text-[#ff7a64]">Vinod Yadav</strong>
         </h1>
@@ -63,7 +63,7 @@ export function IntroSection() {
       </div>
 
       <div
-        className="relative mx-auto aspect-square w-[min(35vw,460px)] min-w-[310px] rounded-full max-lg:row-start-2 max-md:mt-2 max-md:w-[min(72vw,290px)] max-md:min-w-0 max-[420px]:w-[min(72vw,250px)]"
+        className="relative mx-auto aspect-square w-[min(33vw,430px)] min-w-[300px] rounded-full max-lg:row-start-2 max-md:mt-2 max-md:w-[min(72vw,290px)] max-md:min-w-0 max-[420px]:w-[min(72vw,250px)]"
         aria-label="Frontend engineering capability orbit"
       >
         <div className="orbit-spin absolute inset-[4%] rounded-full border-2 border-dashed border-[#ff664d]/60" />

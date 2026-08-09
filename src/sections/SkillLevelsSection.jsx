@@ -2,12 +2,12 @@ import { SKILL_LEVELS } from "../constants/portfolioData";
 
 export function SkillLevelsSection() {
   return (
-    <section className="bg-[#19182d] px-[5.5vw] py-16 text-white max-md:px-4 max-md:py-12" id="skill-levels">
+    <section className="bg-[#19182d] px-[5.5vw] py-14 text-white max-md:px-4 max-md:py-10" id="skill-levels">
       <div className="mx-auto mb-9 max-w-[820px] text-center">
         <span className="text-xs font-black uppercase tracking-[0.22em] text-[#ff7a64]">
           Skill Matrix
         </span>
-        <h2 className="mx-auto mt-4 max-w-[760px] text-[clamp(30px,3.8vw,46px)] font-black leading-tight tracking-normal">
+        <h2 className="mx-auto mt-4 max-w-[720px] text-[clamp(28px,3.3vw,40px)] font-black leading-tight tracking-normal">
           Frontend strengths, shown with practical working confidence
         </h2>
         <p className="mx-auto mt-4 max-w-[640px] text-base leading-7 text-white/65">
@@ -19,7 +19,7 @@ export function SkillLevelsSection() {
       <div className="grid grid-cols-2 gap-5 max-lg:grid-cols-1">
         {SKILL_LEVELS.map((skill) => (
           <article
-            className="rounded-[18px] border border-white/10 bg-white/[0.06] p-5 shadow-[0_18px_42px_rgba(0,0,0,0.18)]"
+            className="rounded-[16px] border border-white/10 bg-white/[0.06] p-4 shadow-[0_18px_42px_rgba(0,0,0,0.18)]"
             style={{ "--level": `${skill.level}%`, "--accent": skill.color }}
             key={skill.name}
           >

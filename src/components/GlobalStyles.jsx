@@ -31,7 +31,7 @@ a {
 }
 
 section {
-  scroll-margin-top: 82px;
+  scroll-margin-top: 76px;
 }
 
 .build-loader {

@@ -7,13 +7,13 @@ export function ExperienceSection() {
 
   return (
     <section
-      className="min-h-screen bg-[#19182d] px-[7vw] py-[118px] pb-[104px] text-white max-[980px]:min-h-0 max-[980px]:px-[22px] max-[760px]:py-[86px] max-[760px]:pb-[76px] max-[620px]:px-4"
+      className="min-h-[90vh] bg-[#19182d] px-[7vw] py-24 pb-24 text-white max-[980px]:min-h-0 max-[980px]:px-[22px] max-[760px]:py-20 max-[760px]:pb-16 max-[620px]:px-4"
       id="experience"
     >
-      <h2 className="mb-32 text-center text-[clamp(40px,4.2vw,60px)] font-black leading-[1.08] tracking-normal max-[760px]:mb-[42px] max-[760px]:text-4xl max-[620px]:text-[32px] max-[420px]:text-[30px]">
+      <h2 className="mb-28 text-center text-[clamp(36px,3.7vw,50px)] font-black leading-[1.08] tracking-normal max-[760px]:mb-[42px] max-[760px]:text-[34px] max-[620px]:text-[31px] max-[420px]:text-[29px]">
         Industry Experience
       </h2>
-      <div className="relative mx-auto mb-[132px] grid max-w-[1180px] grid-cols-2 items-center gap-[180px] before:absolute before:left-0 before:right-0 before:top-1/2 before:h-1.5 before:-translate-y-1/2 before:rounded-full before:bg-[linear-gradient(90deg,#ff654d,#367dff,#8c5cff,#14bf8c)] max-[760px]:mb-10 max-[760px]:grid-cols-1 max-[760px]:gap-8 max-[760px]:before:hidden">
+      <div className="relative mx-auto mb-28 grid max-w-[1120px] grid-cols-2 items-center gap-[150px] before:absolute before:left-0 before:right-0 before:top-1/2 before:h-1.5 before:-translate-y-1/2 before:rounded-full before:bg-[linear-gradient(90deg,#ff654d,#367dff,#8c5cff,#14bf8c)] max-[760px]:mb-10 max-[760px]:grid-cols-1 max-[760px]:gap-8 max-[760px]:before:hidden">
         {EXPERIENCE.map((job, index) => {
           const isActive = activeExperienceIndex === index;
           const isAbove = index % 2 === 0;
@@ -21,7 +21,7 @@ export function ExperienceSection() {
           return (
             <button
               className={`relative z-10 mx-auto grid min-h-[138px] w-[150px] content-center justify-items-center gap-[5px] rounded-xl border bg-white p-3 text-center text-[#19192d] shadow-[0_18px_44px_rgba(0,0,0,0.16)] transition-all duration-200 ${
-                isAbove ? "-translate-y-32 max-[760px]:translate-y-0" : "translate-y-32 max-[760px]:translate-y-0"
+                isAbove ? "-translate-y-28 max-[760px]:translate-y-0" : "translate-y-28 max-[760px]:translate-y-0"
               } ${
                 isActive
                   ? "border-[var(--accent)] shadow-[0_24px_48px_rgba(0,0,0,0.24),0_0_0_4px_rgba(255,102,77,0.12)]"
@@ -36,12 +36,12 @@ export function ExperienceSection() {
             >
               <span
                 className={`absolute left-1/2 h-6 w-6 -translate-x-1/2 rounded-full border-4 border-white bg-[var(--accent)] shadow-[0_0_0_12px_rgba(255,102,77,0.14)] max-[760px]:hidden ${
-                  isAbove ? "bottom-[-92px]" : "top-[-92px]"
+                  isAbove ? "bottom-[-82px]" : "top-[-82px]"
                 }`}
               />
               <span
                 className={`absolute left-1/2 h-[74px] w-0.5 -translate-x-1/2 bg-[var(--accent)] max-[760px]:hidden ${
-                  isAbove ? "bottom-[-74px]" : "top-[-74px]"
+                  isAbove ? "bottom-[-66px]" : "top-[-66px]"
                 }`}
               />
               <div className="grid h-10 w-10 place-items-center rounded-[10px] bg-[#f7f8fb] text-[15px] font-black text-[var(--accent)]">
@@ -61,8 +61,8 @@ export function ExperienceSection() {
           );
         })}
       </div>
-      <div className="mx-auto max-w-[1120px] rounded-[18px] border border-white/10 bg-white/[0.035] p-[38px] shadow-[0_24px_70px_rgba(0,0,0,0.2)] max-[620px]:p-6 max-[420px]:p-5">
-        <h3 className="mb-5 text-[24px] font-black tracking-normal">
+      <div className="mx-auto max-w-[1080px] rounded-[18px] border border-white/10 bg-white/[0.035] p-8 shadow-[0_22px_60px_rgba(0,0,0,0.18)] max-[620px]:p-6 max-[420px]:p-5">
+        <h3 className="mb-5 text-[22px] font-black tracking-normal">
           {activeExperience.company}{" "}
           <span className="text-base font-black text-white/35">
             Roles & Responsibilities

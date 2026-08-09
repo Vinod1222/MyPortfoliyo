@@ -116,20 +116,20 @@ export function ProjectsSection({
 }) {
   return (
     <section
-      className="min-h-[94vh] bg-[#19182d] px-[7vw] py-[118px] pb-[138px] text-white max-[980px]:min-h-0 max-[980px]:px-[22px] max-[980px]:py-[86px] max-[980px]:pb-24 max-[620px]:px-4 max-[620px]:py-12"
+      className="min-h-[90vh] bg-[#19182d] px-[7vw] py-24 pb-28 text-white max-[980px]:min-h-0 max-[980px]:px-[22px] max-[980px]:py-20 max-[980px]:pb-20 max-[620px]:px-4 max-[620px]:py-10"
       id="projects"
     >
-      <h2 className="mx-auto mb-16 max-w-[1120px] text-center text-[clamp(38px,4.2vw,54px)] font-black leading-[1.08] tracking-normal max-[760px]:mb-[42px] max-[760px]:text-4xl max-[620px]:text-[32px] max-[420px]:text-[30px]">
+      <h2 className="mx-auto mb-12 max-w-[1020px] text-center text-[clamp(34px,3.7vw,48px)] font-black leading-[1.08] tracking-normal max-[760px]:mb-9 max-[760px]:text-[34px] max-[620px]:text-[30px] max-[420px]:text-[28px]">
         Solutions Built for Impact, Speed, and Reliability
       </h2>
-      <div className="mx-auto grid max-w-[1380px] gap-7">
+      <div className="mx-auto grid max-w-[1320px] gap-5">
         {PROJECTS.map((project, index) => {
           const Icon = project.icon;
           const isOpen = openProject === index;
 
           return (
             <article
-              className={`relative grid cursor-pointer grid-cols-[82px_minmax(0,1fr)_48px] items-center gap-6 overflow-hidden rounded-[22px] border border-[#ff664d]/40 border-t-[3px] border-t-[#ff664d] bg-[#21203b] px-6 py-[26px] shadow-[0_22px_54px_rgba(0,0,0,0.12)] transition-all duration-300 max-[980px]:grid-cols-1 max-[620px]:rounded-2xl max-[620px]:px-[18px] max-[620px]:py-[22px] ${
+              className={`relative grid cursor-pointer grid-cols-[76px_minmax(0,1fr)_44px] items-center gap-5 overflow-hidden rounded-[20px] border border-[#ff664d]/40 border-t-[3px] border-t-[#ff664d] bg-[#21203b] px-5 py-5 shadow-[0_20px_48px_rgba(0,0,0,0.12)] transition-all duration-300 max-[980px]:grid-cols-1 max-[620px]:rounded-2xl max-[620px]:px-4 max-[620px]:py-5 ${
                 isOpen
                   ? "items-start border-[#ff664d]"
                   : "hover:border-[#ff664d]/70"
@@ -141,7 +141,7 @@ export function ProjectsSection({
               key={project.name}
             >
               <div className="grid justify-items-center gap-2.5 max-[980px]:flex max-[980px]:items-center max-[980px]:justify-start">
-                <span className="grid h-14 w-14 place-items-center rounded-[13px] bg-[#ff664d]/15 text-[#ff664d]">
+                <span className="grid h-12 w-12 place-items-center rounded-[13px] bg-[#ff664d]/15 text-[#ff664d]">
                   <Icon size={24} />
                 </span>
                 <small className="text-xs font-black uppercase tracking-[0.08em] text-[#20d071]">
@@ -150,7 +150,7 @@ export function ProjectsSection({
               </div>
 
               <div>
-                <h3 className="mb-2 text-[22px] font-black tracking-normal text-white max-[620px]:text-[19px]">
+                <h3 className="mb-2 text-xl font-black tracking-normal text-white max-[620px]:text-lg">
                   {project.name}
                 </h3>
                 <p className="mb-3 text-base leading-[1.65] text-white/55">
