@@ -6,9 +6,9 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
   const selectedSection = getProjectSections(project)[activeSection];
 
   return (
-    <div className="col-span-full mt-8 grid grid-cols-[320px_1fr] overflow-hidden border-t border-white/10 max-lg:grid-cols-1">
+    <div className="col-span-full mt-5 grid grid-cols-[260px_1fr] overflow-hidden border-t border-white/10 max-lg:grid-cols-1">
       <aside
-        className="border-r border-white/10 p-8 max-lg:border-b max-lg:border-r-0 max-md:p-5"
+        className="border-r border-white/10 p-5 max-lg:border-b max-lg:border-r-0 max-md:p-4"
         aria-label={`${project.name} detail contents`}
       >
         <strong className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-white/45">
@@ -17,7 +17,7 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
         {project.contents.map((item, itemIndex) => (
           <button
             type="button"
-            className={`mb-3 flex min-h-14 w-full items-center gap-3 rounded-xl border-0 px-4 text-left text-base font-black transition-all duration-200 ${
+            className={`mb-2 flex min-h-11 w-full items-center gap-3 rounded-xl border-0 px-3 text-left text-sm font-black transition-all duration-200 ${
               activeSection === itemIndex
                 ? "bg-[#ff664d] text-white shadow-[0_12px_26px_rgba(255,102,77,0.2)]"
                 : "bg-white/[0.05] text-white/55 hover:bg-white/10 hover:text-white"
@@ -33,26 +33,26 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
         ))}
       </aside>
 
-      <div className="max-h-[360px] overflow-auto p-8 max-md:p-5">
+      <div className="max-h-[340px] overflow-auto p-6 max-md:p-4">
         <section>
-          <h4 className="mb-4 text-2xl font-black tracking-normal text-white">
+          <h4 className="mb-3 text-xl font-black tracking-normal text-white">
             {selectedSection.title}
           </h4>
-          <p className="text-base leading-7 text-[#c8d2f5]">
+          <p className="text-[15px] leading-7 text-[#c8d2f5]">
             {selectedSection.intro}
           </p>
         </section>
 
         {selectedSection.type === "table" && (
           <div
-            className="mt-6 overflow-hidden rounded-[18px] border border-white/10"
+            className="mt-5 overflow-hidden rounded-[16px] border border-white/10 text-sm"
             role="table"
             aria-label={`${project.name} before and after`}
           >
             <div className="grid grid-cols-[0.7fr_1fr_1fr] bg-[#2d2b55] max-md:grid-cols-1" role="row">
-              <strong className="p-4 text-white">Area</strong>
-              <strong className="p-4 text-white">Before</strong>
-              <strong className="p-4 text-white">After</strong>
+              <strong className="p-3 text-white">Area</strong>
+              <strong className="p-3 text-white">Before</strong>
+              <strong className="p-3 text-white">After</strong>
             </div>
             {project.table.map(([area, before, after]) => (
               <div
@@ -60,19 +60,19 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
                 role="row"
                 key={area}
               >
-                <strong className="p-4 text-white">{area}</strong>
-                <span className="p-4 text-[#c8d2f5]">{before}</span>
-                <span className="p-4 text-[#c8d2f5]">{after}</span>
+                <strong className="p-3 text-white">{area}</strong>
+                <span className="p-3 text-[#c8d2f5]">{before}</span>
+                <span className="p-3 text-[#c8d2f5]">{after}</span>
               </div>
             ))}
           </div>
         )}
 
         {selectedSection.type === "layers" && (
-          <div className="mt-8 grid gap-4">
+          <div className="mt-5 grid gap-3">
             {selectedSection.layers.map(([layer, items]) => (
-              <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5" key={layer}>
-                <h5 className="mb-3 text-lg font-black text-white">{layer}</h5>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4" key={layer}>
+                <h5 className="mb-3 text-base font-black text-white">{layer}</h5>
                 <div className="flex flex-wrap gap-3">
                   {items.map((item) => (
                     <span className="rounded-full bg-white/10 px-3 py-2 text-xs font-black text-[#c8d2f5]" key={item}>{item}</span>
@@ -84,19 +84,19 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
         )}
 
         {selectedSection.type === "modules" && (
-          <div className="mt-8 grid grid-cols-2 gap-4 max-md:grid-cols-1">
+          <div className="mt-5 grid grid-cols-2 gap-3 max-md:grid-cols-1">
             {selectedSection.modules.map((module) => (
-              <article className="rounded-2xl border border-white/10 bg-white/[0.05] p-5" key={module.area}>
-                <h5 className="mb-2 text-lg font-black text-white">{module.area}</h5>
-                <p className="leading-7 text-[#c8d2f5]">{module.detail}</p>
+              <article className="rounded-2xl border border-white/10 bg-white/[0.05] p-4" key={module.area}>
+                <h5 className="mb-2 text-base font-black text-white">{module.area}</h5>
+                <p className="text-sm leading-7 text-[#c8d2f5]">{module.detail}</p>
               </article>
             ))}
           </div>
         )}
 
         {selectedSection.type === "capabilities" && (
-          <section className="mt-8">
-            <ul className="grid gap-4 pl-5 text-lg leading-8 text-[#c8d2f5]">
+          <section className="mt-5">
+            <ul className="grid gap-3 pl-5 text-sm leading-7 text-[#c8d2f5]">
               {project.capabilities.map((capability) => (
                 <li key={capability}>{capability}</li>
               ))}
@@ -115,18 +115,18 @@ export function ProjectsSection({
   openProject,
 }) {
   return (
-    <section className="bg-[#19182d] px-[5.5vw] py-16 text-white max-md:px-4 max-md:py-12" id="projects">
-      <h2 className="mb-10 max-w-[1120px] text-[clamp(32px,4vw,54px)] font-black leading-tight tracking-normal">
+    <section className="bg-[#19182d] px-[5.5vw] py-14 text-white max-md:px-4 max-md:py-10" id="projects">
+      <h2 className="mb-8 max-w-[920px] text-[clamp(28px,3.1vw,44px)] font-black leading-tight tracking-normal">
         Solutions Built for Impact, Speed, and Reliability
       </h2>
-      <div className="grid gap-8">
+      <div className="grid max-w-[1320px] gap-5">
         {PROJECTS.map((project, index) => {
           const Icon = project.icon;
           const isOpen = openProject === index;
 
           return (
             <article
-              className={`relative grid cursor-pointer grid-cols-[78px_1fr_50px] overflow-hidden rounded-[22px] border bg-[#21203b] shadow-[0_22px_60px_rgba(0,0,0,0.2)] transition-all duration-300 max-md:grid-cols-1 max-md:p-0 ${
+              className={`relative grid cursor-pointer grid-cols-[70px_1fr_46px] overflow-hidden rounded-[18px] border bg-[#21203b] shadow-[0_18px_45px_rgba(0,0,0,0.18)] transition-all duration-300 max-md:grid-cols-1 max-md:p-0 ${
                 isOpen
                   ? "border-[#ff664d] shadow-[0_28px_70px_rgba(0,0,0,0.28)]"
                   : "border-white/10 hover:-translate-y-1 hover:border-[#ff664d]/70"
@@ -137,31 +137,31 @@ export function ProjectsSection({
               }}
               key={project.name}
             >
-              <div className="grid content-start justify-items-center gap-3 p-6 max-md:flex max-md:items-center max-md:justify-start max-md:p-5">
-                <span className="grid h-14 w-14 place-items-center rounded-[16px] bg-[#ff664d]/15 text-[#ff664d]">
-                  <Icon size={24} />
+              <div className="grid content-start justify-items-center gap-2 p-5 max-md:flex max-md:items-center max-md:justify-start max-md:p-4">
+                <span className="grid h-12 w-12 place-items-center rounded-[14px] bg-[#ff664d]/15 text-[#ff664d]">
+                  <Icon size={22} />
                 </span>
-                <small className="text-xs font-black uppercase tracking-[0.16em] text-[#24e58a]">
+                <small className="text-[11px] font-black uppercase tracking-[0.14em] text-[#24e58a]">
                   {project.status}
                 </small>
               </div>
 
-              <div className="p-6 pl-0 max-md:p-5 max-md:pt-0">
-                <h3 className="mb-3 text-2xl font-black tracking-normal text-white max-md:text-[19px]">
+              <div className="p-5 pl-0 max-md:p-4 max-md:pt-0">
+                <h3 className="mb-2 text-xl font-black tracking-normal text-white max-md:text-[18px]">
                   {project.name}
                 </h3>
-                <p className="mb-4 text-base leading-7 text-[#c8d2f5]">
+                <p className="mb-3 text-[15px] leading-7 text-[#c8d2f5]">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   {project.tags.map((tag) => (
-                    <span className="rounded-full bg-white/10 px-4 py-2 text-xs font-black text-[#c8d2f5]" key={tag}>
+                    <span className="rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-black text-[#c8d2f5]" key={tag}>
                       {tag}
                     </span>
                   ))}
                 </div>
                 {isOpen && (
-                  <p className="mt-6 text-lg font-black text-white/75">
+                  <p className="mt-4 text-sm font-black text-white/75">
                     {project.impact}
                   </p>
                 )}
@@ -171,7 +171,7 @@ export function ProjectsSection({
                 type="button"
                 aria-label={`Toggle ${project.name}`}
                 aria-expanded={isOpen}
-                className="m-6 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/[0.06] text-white transition-all duration-300 max-md:absolute max-md:right-0 max-md:top-0"
+                className="m-5 grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.06] text-white transition-all duration-300 max-md:absolute max-md:right-0 max-md:top-0"
                 onClick={() => onProjectToggle(index)}
               >
                 <ChevronDown
