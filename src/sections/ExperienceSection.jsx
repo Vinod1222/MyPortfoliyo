@@ -49,7 +49,9 @@ export function ExperienceSection() {
                 }`}
               />
               <span
-                className="absolute left-1/2 top-1/2 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--accent)]/20 shadow-[0_0_0_9px_rgba(255,102,77,0.07)] max-[760px]:hidden"
+                className={`absolute left-1/2 top-1/2 grid h-9 w-9 -translate-x-1/2 place-items-center rounded-full bg-[var(--accent)]/20 shadow-[0_0_0_9px_rgba(255,102,77,0.07)] max-[760px]:hidden ${
+                  isAbove ? "-translate-y-1/2" : "translate-y-1/2"
+                }`}
                 style={{
                   top: isAbove ? "calc(100% + 42px)" : "auto",
                   bottom: isAbove ? "auto" : "calc(100% + 42px)",
