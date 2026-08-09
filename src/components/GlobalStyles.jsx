@@ -323,7 +323,15 @@ section {
   }
 
   .flow-dot {
-    display: none;
+    inset: 4%;
+    display: block;
+  }
+
+  .flow-dot::after {
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 18px rgba(255, 102, 77, 0.85);
   }
 
   .orbit-item::before {
