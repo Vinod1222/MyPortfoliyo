@@ -92,7 +92,7 @@ export default function App() {
         onNavClick={scrollToSection}
       />
 
-      <main>
+      <main className="pt-[88px]">
         <IntroSection />
         <AboutSection
           openSkill={openSkill}
@@ -119,7 +119,9 @@ export default function App() {
         />
       </main>
 
-      <footer>&copy; 2026 Vinod Kumar Yadav. All rights reserved.</footer>
+      <footer className="bg-[#111021] px-[5.5vw] py-8 text-center text-sm font-semibold text-white/55">
+        &copy; 2026 Vinod Kumar Yadav. All rights reserved.
+      </footer>
     </>
   );
 }
