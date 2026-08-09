@@ -13,7 +13,7 @@ const orbitPositionClass = {
 export function IntroSection() {
   return (
     <section
-      className="relative grid min-h-[calc(100vh-88px)] grid-cols-[minmax(0,0.92fr)_minmax(320px,0.9fr)] items-center gap-[5vw] overflow-hidden bg-[#19182d] px-[5.5vw] py-16 text-white max-lg:grid-cols-1 max-lg:gap-8 max-md:px-4 max-md:py-8"
+      className="relative grid min-h-[calc(100vh-88px)] grid-cols-[minmax(0,0.92fr)_minmax(320px,0.9fr)] items-center gap-[4vw] overflow-hidden bg-[#19182d] px-[5.5vw] py-12 text-white max-lg:grid-cols-1 max-lg:gap-8 max-md:px-4 max-md:py-8"
       id="home"
     >
       <div
@@ -30,20 +30,20 @@ export function IntroSection() {
           <span className="h-3 w-3 rounded-full bg-[#24e58a] shadow-[0_0_0_7px_rgba(37,201,156,0.14)]" />
           Open to Work
         </div>
-        <h1 className="my-7 text-[clamp(48px,6vw,86px)] font-black leading-[0.98] tracking-normal max-md:my-4 max-md:text-[31px] max-[420px]:text-[29px]">
+        <h1 className="my-6 text-[clamp(42px,4.8vw,72px)] font-black leading-[1] tracking-normal max-md:my-4 max-md:text-[31px] max-[420px]:text-[29px]">
           Hello! I am
           <strong className="block text-[#ff7a64]">Vinod Yadav</strong>
         </h1>
-        <p className="mb-3 max-w-[730px] text-[22px] leading-[1.55] text-[#c8d2f5] max-md:text-sm">
+        <p className="mb-3 max-w-[660px] text-lg leading-[1.65] text-[#c8d2f5] max-md:text-sm">
           <b className="font-black text-[#ff7a64]">From design to code</b> -
           scalable React interfaces, engineered for fintech and enterprise
           teams.
         </p>
-        <p className="mb-3 max-w-[730px] text-[22px] leading-[1.55] text-[#c8d2f5] max-md:text-sm">
+        <p className="mb-3 max-w-[660px] text-lg leading-[1.65] text-[#c8d2f5] max-md:text-sm">
           Driven to build faster, cleaner, and more adaptive frontend systems
           that turn complex workflows into polished product experiences.
         </p>
-        <div className="mt-12 flex items-center gap-4 max-md:grid max-md:gap-3">
+        <div className="mt-9 flex items-center gap-4 max-md:grid max-md:gap-3">
           <span className="text-sm font-black text-white">Experienced in</span>
           <div
             className="domain-roller relative h-14 w-[248px] max-w-full overflow-hidden rounded-xl border border-[#ff664d]/25 bg-[#ff664d]/10"
@@ -63,7 +63,7 @@ export function IntroSection() {
       </div>
 
       <div
-        className="relative mx-auto aspect-square w-[min(42vw,560px)] min-w-[330px] rounded-full max-lg:row-start-2 max-md:mt-2 max-md:w-[min(72vw,290px)] max-md:min-w-0 max-[420px]:w-[min(72vw,250px)]"
+        className="relative mx-auto aspect-square w-[min(38vw,500px)] min-w-[320px] rounded-full max-lg:row-start-2 max-md:mt-2 max-md:w-[min(72vw,290px)] max-md:min-w-0 max-[420px]:w-[min(72vw,250px)]"
         aria-label="Frontend engineering capability orbit"
       >
         <div className="orbit-spin absolute inset-[4%] rounded-full border-2 border-dashed border-[#ff664d]/60" />

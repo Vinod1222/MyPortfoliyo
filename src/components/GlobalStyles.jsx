@@ -30,6 +30,10 @@ a {
   text-decoration: none;
 }
 
+section {
+  scroll-margin-top: 88px;
+}
+
 .build-loader {
   animation: buildBadgeExit 3.1s ease forwards;
 }

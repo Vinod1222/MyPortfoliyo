@@ -9,12 +9,12 @@ export function ConnectSection({
   selectedIntent,
 }) {
   return (
-    <section className="grid grid-cols-[minmax(0,0.8fr)_minmax(320px,0.72fr)] gap-[5vw] bg-[#f7f8fa] px-[5.5vw] py-20 max-lg:grid-cols-1 max-md:px-4 max-md:py-12" id="lets-connect">
+    <section className="grid grid-cols-[minmax(0,0.8fr)_minmax(320px,0.72fr)] gap-10 bg-[#f7f8fa] px-[5.5vw] py-16 max-lg:grid-cols-1 max-md:px-4 max-md:py-12" id="lets-connect">
       <div>
-        <h2 className="mb-5 text-[clamp(36px,5vw,64px)] font-black leading-tight tracking-normal text-[#19192d]">
+        <h2 className="mb-5 text-[clamp(32px,4vw,52px)] font-black leading-tight tracking-normal text-[#19192d]">
           Let's create something together
         </h2>
-        <p className="mb-7 max-w-[640px] text-lg leading-8 text-[#4b5563]">
+        <p className="mb-7 max-w-[600px] text-base leading-7 text-[#4b5563]">
           Whether it is a full-time role, freelance project, or a product
           conversation, I would love to hear from you.
         </p>
@@ -52,12 +52,12 @@ export function ConnectSection({
       </div>
 
       <form
-        className="grid gap-5 rounded-[24px] border border-black/10 bg-white p-9 shadow-[0_24px_70px_rgba(17,24,39,0.08)] max-md:p-6"
+        className="grid gap-5 rounded-[24px] border border-black/10 bg-white p-7 shadow-[0_24px_70px_rgba(17,24,39,0.08)] max-md:p-6"
         onSubmit={(event) => event.preventDefault()}
       >
         <label className="grid gap-2 text-sm font-black text-[#19192d]">
           Your Email
-          <input className="min-h-[58px] rounded-2xl border border-black/10 bg-[#f7f8fa] px-5 text-base font-semibold outline-none transition-colors focus:border-[#ff664d]" type="email" placeholder="email@example.com" />
+          <input className="min-h-14 rounded-2xl border border-black/10 bg-[#f7f8fa] px-5 text-base font-semibold outline-none transition-colors focus:border-[#ff664d]" type="email" placeholder="email@example.com" />
         </label>
         <label className="grid gap-2 text-sm font-black text-[#19192d]">
           Reaching Out For
@@ -67,7 +67,7 @@ export function ConnectSection({
           >
             <button
               type="button"
-              className="flex min-h-[58px] w-full items-center justify-between rounded-2xl border border-black/10 bg-[#f7f8fa] px-5 text-left text-base font-semibold transition-colors focus:border-[#ff664d]"
+              className="flex min-h-14 w-full items-center justify-between rounded-2xl border border-black/10 bg-[#f7f8fa] px-5 text-left text-base font-semibold transition-colors focus:border-[#ff664d]"
               onClick={onIntentToggle}
               aria-expanded={intentOpen}
             >
@@ -91,7 +91,7 @@ export function ConnectSection({
           </div>
         </label>
         <button
-          className="min-h-[58px] rounded-2xl border-0 bg-[#ff664d] px-6 font-black text-white shadow-[0_14px_30px_rgba(255,102,77,0.22)] transition-all disabled:cursor-not-allowed disabled:bg-[#d1d5db] disabled:shadow-none"
+          className="min-h-14 rounded-2xl border-0 bg-[#ff664d] px-6 font-black text-white shadow-[0_14px_30px_rgba(255,102,77,0.22)] transition-all disabled:cursor-not-allowed disabled:bg-[#d1d5db] disabled:shadow-none"
           type="submit"
           disabled={!selectedIntent}
         >

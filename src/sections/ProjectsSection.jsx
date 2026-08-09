@@ -33,19 +33,19 @@ function ProjectDetail({ activeSection, onSectionChange, project }) {
         ))}
       </aside>
 
-      <div className="max-h-[420px] overflow-auto p-10 max-md:p-5">
+      <div className="max-h-[360px] overflow-auto p-8 max-md:p-5">
         <section>
-          <h4 className="mb-5 text-3xl font-black tracking-normal text-white">
+          <h4 className="mb-4 text-2xl font-black tracking-normal text-white">
             {selectedSection.title}
           </h4>
-          <p className="text-xl leading-8 text-[#c8d2f5] max-md:text-base">
+          <p className="text-base leading-7 text-[#c8d2f5]">
             {selectedSection.intro}
           </p>
         </section>
 
         {selectedSection.type === "table" && (
           <div
-            className="mt-8 overflow-hidden rounded-[18px] border border-white/10"
+            className="mt-6 overflow-hidden rounded-[18px] border border-white/10"
             role="table"
             aria-label={`${project.name} before and after`}
           >
@@ -115,8 +115,8 @@ export function ProjectsSection({
   openProject,
 }) {
   return (
-    <section className="bg-[#19182d] px-[5.5vw] py-20 text-white max-md:px-4 max-md:py-12" id="projects">
-      <h2 className="mb-12 max-w-[1320px] text-[clamp(38px,5.5vw,72px)] font-black leading-tight tracking-normal">
+    <section className="bg-[#19182d] px-[5.5vw] py-16 text-white max-md:px-4 max-md:py-12" id="projects">
+      <h2 className="mb-10 max-w-[1120px] text-[clamp(32px,4vw,54px)] font-black leading-tight tracking-normal">
         Solutions Built for Impact, Speed, and Reliability
       </h2>
       <div className="grid gap-8">
@@ -126,7 +126,7 @@ export function ProjectsSection({
 
           return (
             <article
-              className={`relative grid cursor-pointer grid-cols-[90px_1fr_54px] overflow-hidden rounded-[24px] border bg-[#21203b] shadow-[0_22px_60px_rgba(0,0,0,0.2)] transition-all duration-300 max-md:grid-cols-1 max-md:p-0 ${
+              className={`relative grid cursor-pointer grid-cols-[78px_1fr_50px] overflow-hidden rounded-[22px] border bg-[#21203b] shadow-[0_22px_60px_rgba(0,0,0,0.2)] transition-all duration-300 max-md:grid-cols-1 max-md:p-0 ${
                 isOpen
                   ? "border-[#ff664d] shadow-[0_28px_70px_rgba(0,0,0,0.28)]"
                   : "border-white/10 hover:-translate-y-1 hover:border-[#ff664d]/70"
@@ -137,8 +137,8 @@ export function ProjectsSection({
               }}
               key={project.name}
             >
-              <div className="grid content-start justify-items-center gap-4 p-8 max-md:flex max-md:items-center max-md:justify-start max-md:p-5">
-                <span className="grid h-[70px] w-[70px] place-items-center rounded-[18px] bg-[#ff664d]/15 text-[#ff664d]">
+              <div className="grid content-start justify-items-center gap-3 p-6 max-md:flex max-md:items-center max-md:justify-start max-md:p-5">
+                <span className="grid h-14 w-14 place-items-center rounded-[16px] bg-[#ff664d]/15 text-[#ff664d]">
                   <Icon size={24} />
                 </span>
                 <small className="text-xs font-black uppercase tracking-[0.16em] text-[#24e58a]">
@@ -146,11 +146,11 @@ export function ProjectsSection({
                 </small>
               </div>
 
-              <div className="p-8 pl-0 max-md:p-5 max-md:pt-0">
-                <h3 className="mb-3 text-[28px] font-black tracking-normal text-white max-md:text-[19px]">
+              <div className="p-6 pl-0 max-md:p-5 max-md:pt-0">
+                <h3 className="mb-3 text-2xl font-black tracking-normal text-white max-md:text-[19px]">
                   {project.name}
                 </h3>
-                <p className="mb-5 text-lg leading-8 text-[#c8d2f5]">
+                <p className="mb-4 text-base leading-7 text-[#c8d2f5]">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -171,7 +171,7 @@ export function ProjectsSection({
                 type="button"
                 aria-label={`Toggle ${project.name}`}
                 aria-expanded={isOpen}
-                className="m-8 grid h-[54px] w-[54px] place-items-center rounded-2xl border border-white/10 bg-white/[0.06] text-white transition-all duration-300 max-md:absolute max-md:right-0 max-md:top-0"
+                className="m-6 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/[0.06] text-white transition-all duration-300 max-md:absolute max-md:right-0 max-md:top-0"
                 onClick={() => onProjectToggle(index)}
               >
                 <ChevronDown
