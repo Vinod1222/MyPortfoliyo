@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Header } from "./components/Header";
+import { GlobalStyles } from "./components/GlobalStyles";
 import { SkeletonScreen } from "./components/SkeletonScreen";
 import { NAV_ITEMS } from "./constants/portfolioData";
 import { useActiveNavigation } from "./hooks/useActiveNavigation";
@@ -79,6 +80,7 @@ export default function App() {
 
   return (
     <>
+      <GlobalStyles />
       {isSkeletonVisible && <SkeletonScreen />}
 
       <Header
